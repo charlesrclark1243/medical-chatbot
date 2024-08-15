@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-
 import Interface from './components/Interface';
 import './App.css';
 

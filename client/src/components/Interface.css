@@ -1,0 +1,80 @@
+* {
+    font-family: sans-serif;
+}
+
+#heading {
+    text-align: center;
+    background-color: #00449D;
+    color: white;
+    margin: 24px;
+    border-radius: 25px;
+}
+
+#title {
+    font-size: 48pt;
+    margin: 0px;
+    padding: 10px 5px;
+}
+
+#disclaimer {
+    font-size: 16pt;
+    margin: 0px;
+    padding: 0px 5px 10px 5px;
+}
+
+#interface {
+    background-color: #cccccc;
+    margin: 0px 24px;
+    padding: 10px 5px;
+    border-radius: 25px;
+    height: 60vh;
+}
+
+#user > form {
+    display: inline-block;
+}
+
+#user > form > input {
+    background-color: #00449D;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    width: 70vw;
+    padding: 20px;
+    margin: 0px 12px 0px 0px;
+}
+
+#user > form > button {
+    background-color: #00449d;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    width: 10vw;
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
+}
+
+#question-text {
+    margin: 5px ;
+}
+
+#bot > p {
+    display: inline-block;
+    background-color: white;
+    color: #00449D;
+    font-size: 16px;
+    border-radius: 25px;
+    width: 80.75vw;
+    padding: 20px;
+    margin: 0px 12px 0px 0px;
+}
+
+.avatar {
+    background-color: white;
+    border-radius: 100%;
+    margin: 5px;
+    width: 70px;
+}

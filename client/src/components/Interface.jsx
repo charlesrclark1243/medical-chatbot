@@ -2,8 +2,7 @@ import React from 'react'
 import botAvatar from '../assets/doctor-clipart.png'
 import userAvatar from '../assets/user-clipart.png'
 
-
-import '..css'
+import './Interface.css'
 
 class Interface extends React.Component {
     constructor(props) {
@@ -13,26 +12,29 @@ class Interface extends React.Component {
             'userAvatar': userAvatar,
             'botAvatar': botAvatar,
             'userQuestion': '',
-            'botResponse': ''
+            'botResponse': 'Temp'
         };
 
         this.handleSendClick = this.handleSendClick.bind(this);
     }
 
-    async handleSendClick(ev) {
+    handleSendClick(ev) {
         ev.preventDefault();
-        if (document.getElementById('question').ariaValueMax.length > 0) {
-            this.setState({ userQuestion: document.getElementById('question').value });
+        if (document.getElementById('question-text').value.length > 0) {
+            this.setState({ userQuestion: document.getElementById('question-text').value });
 
             const body = { 'question': this.state.userQuestion };
-            const response = await fetch('http://127.0.0.1:5000/query', {
+            fetch('http://127.0.0.1:5000/query', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body)
-            });
-
-            const data = await response.json();
-            this.setState({ botResponse: data.response });
+            }).then(
+                response => response.json()
+            ).then(
+                body => {
+                    this.setState({ botResponse: body.response })
+                }
+            )
 
 
         }
@@ -47,7 +49,7 @@ class Interface extends React.Component {
                 </div>
 
                 <div id='interface'>
-                    <div id='user'>
+                    <div className='message' id='user'>
                         <img className='avatar' src={this.state.userAvatar} alt="User avatar" />
                         <form onSubmit={this.handleSendClick}>
                             <input type="text" id='question-text' defaultValue={'Enter your question here.'} />
@@ -55,9 +57,9 @@ class Interface extends React.Component {
                         </form>
                     </div>
 
-                    <div id='bot'>
-                        <img className='avatar' src={this.state.avatar} alt='Bot avatar' />
-                        <p>{this.state.responseText}</p>
+                    <div className='message' id='bot'>
+                        <img className='avatar' src={this.state.botAvatar} alt='Bot avatar' />
+                        <p>{this.state.botResponse}</p>
                     </div>
                 </div>
             </div>
