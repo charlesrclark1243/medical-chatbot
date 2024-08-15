@@ -49,3 +49,5 @@ class UserMessage extends React.Component {
         );
     }
 }
+
+export default UserMessage;
