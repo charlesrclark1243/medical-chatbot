@@ -88,13 +88,14 @@ def create_app():
         '''
 
         if request.method == 'POST':
-            question = request.form['question']
+            question = request.json['question']
             response = utils.query_chain(qa, question=question)
 
             if isinstance(response, int):
                 response = f'Sorry, I ran into an issue when processing your previous question (error code {response}), feel free to try again. If the issue persists, I recommend trying to contact your healthcare provider with your question instead.'
             
             return {
+                'question': question,
                 'response': response
             }
         
