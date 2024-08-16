@@ -17,7 +17,7 @@
 }
 
 #disclaimer {
-    font-size: 16pt;
+    font-size: 8pt;
     margin: 0px;
     padding: 0px 5px 10px 5px;
 }
@@ -27,7 +27,6 @@
     margin: 0px 24px;
     padding: 10px 5px;
     border-radius: 25px;
-    height: 60vh;
 }
 
 #user > form {

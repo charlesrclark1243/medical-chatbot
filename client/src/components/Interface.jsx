@@ -11,8 +11,7 @@ class Interface extends React.Component {
         this.state = {
             'userAvatar': userAvatar,
             'botAvatar': botAvatar,
-            'userQuestion': '',
-            'botResponse': 'Temp'
+            'botResponse': ''
         };
 
         this.handleSendClick = this.handleSendClick.bind(this);
@@ -21,9 +20,9 @@ class Interface extends React.Component {
     handleSendClick(ev) {
         ev.preventDefault();
         if (document.getElementById('question-text').value.length > 0) {
-            this.setState({ userQuestion: document.getElementById('question-text').value });
-
-            const body = { 'question': this.state.userQuestion };
+            this.setState({ botResponse: 'Thinking...' })
+            const body = { 'question': document.getElementById('question-text').value };
+            
             fetch('http://127.0.0.1:5000/query', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -35,8 +34,6 @@ class Interface extends React.Component {
                     this.setState({ botResponse: body.response })
                 }
             )
-
-
         }
     }
     
@@ -45,7 +42,7 @@ class Interface extends React.Component {
             <div>
                 <div id='heading'>
                     <h1 id='title'>{'Medi-Bot 3.1-8B'}</h1>
-                    <p id='disclaimer'>{'Medi-Bot 3.1-8B is powered by a large language model, and as such, it can make mistakes: please research all answers on your own as well. For important medical questions, please consult a human healthcare provider.'}</p>
+                    <p id='disclaimer'>{'Disclaimer: This chatbot is powered by a large language model (LLM) and is designed to provide general information and support. While it strives to offer accurate and helpful responses, it may occasionally provide incorrect or incomplete information. This chatbot is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for any medical concerns or before making decisions based on the information provided by this chatbot. In case of a medical emergency, please seek immediate help from emergency services.'}</p>
                 </div>
 
                 <div id='interface'>
