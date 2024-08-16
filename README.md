@@ -1,6 +1,6 @@
 # Medi-Bot 3.1-8B
 
-Medi-Bot 3.1-8B is a full-stack Large Language Model (LLM)-powered Retrieval-Augmented Generation (RAG) medical chatbot. The backend was built using Python -- specifically Langchain, Ollama, Pinecone, and Flask -- while the frontend was constructed using React. Medi-Bot 3.1-8B uses Meta's Llama 3.1 8B model as its LLM backbone and a Pinecone vector database containing embeddings from *The Gale Encyclopedia o Medicine (2nd edition)* to power its RAG capabilities. The diagram below expands on how the app works.
+Medi-Bot 3.1-8B is a full-stack Large Language Model (LLM)-powered Retrieval-Augmented Generation (RAG) medical chatbot. The backend was built using Python -- specifically Langchain, Ollama, Pinecone, and Flask -- while the frontend was constructed using React. Medi-Bot 3.1-8B uses Meta's Llama 3.1 8B model as its LLM backbone and a Pinecone vector database containing embeddings from *The Gale Encyclopedia of Medicine (2nd edition)* to power its RAG capabilities. The diagram below expands on how the app works.
 
 ![Diagram explaining how Medi-Bot 3.1-8B works.](./assets/app-flowchart.png)
 
