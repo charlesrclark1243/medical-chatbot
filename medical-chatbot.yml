@@ -147,8 +147,3 @@ dependencies:
       - werkzeug==3.0.3
       - yarl==1.9.4
       - zipp==3.20.0
-variables:
-  PINECONE_KEY: aa693bca-909b-42d4-9e10-209c27a2adff
-  PINECONE_API_KEY: aa693bca-909b-42d4-9e10-209c27a2adff
-  secret_key: 0\xf3\t\xea\xb0\xac\x9e\xc5\xa8\xb7\xc1)\xcdM@M
-prefix: /home/charlieclark/miniconda3/envs/medical-chatbot
